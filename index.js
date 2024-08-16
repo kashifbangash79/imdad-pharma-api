@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 
 const corsOptions = {
-    origin: ["https://imdad-pharma.vercel.app"],
+    origin: ["https://imdad-pharma.vercel.app","http://localhost:3000"],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
