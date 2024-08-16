@@ -16,9 +16,9 @@ const app = express();
 app.use(bodyParser.json());
 
 const corsOptions = {
-    origin: 'https://imdad-pharma.vercel.app',
+    origin: ["https://imdad-pharma.vercel.app"],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    credentials: true
 };
 
 // Apply CORS middleware
