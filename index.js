@@ -17,7 +17,7 @@ const app = express();
 app.use(bodyParser.json());
 
 const corsOptions = {
-  origin: 'https://imdad-pharma.vercel.app',
+  origin: ['https://imdad-pharma.vercel.app','*'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 204
@@ -25,21 +25,7 @@ const corsOptions = {
 
 // Apply CORS middleware
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
 app.use(express.json());
-
-// Debugging middleware to log requests and responses
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://imdad-pharma.vercel.app');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  console.log(`Incoming request: ${req.method} ${req.url}`);
-  console.log(`Request headers:`, req.headers);
-  res.on('finish', () => {
-    console.log(`Response headers:`, res.getHeaders());
-  });
-  next();
-});
 
 // Routes
 app.use('/api/auth', PurchaseHistoryRoutes);
