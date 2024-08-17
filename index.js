@@ -37,6 +37,11 @@ app.use('/api/customers', customerRoutes);
 app.use('/recoveries', recoveriesRouter);
 app.use('/api/expenses', expenseRoutes);
 
+// Test route to verify CORS configuration
+app.get('/test', (req, res) => {
+    res.send('CORS is working');
+});
+
 // Connect to MongoDB and start the server
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
