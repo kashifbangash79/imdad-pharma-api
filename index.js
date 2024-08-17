@@ -16,15 +16,15 @@ dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 
-const corsOptions = {
-  origin: ['https://imdad-pharma.vercel.app','*'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  optionsSuccessStatus: 204
-};
+// const corsOptions = {
+//   origin: ['https://imdad-pharma.vercel.app','*'],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   optionsSuccessStatus: 204
+// };
 
 // Apply CORS middleware
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 // Routes
