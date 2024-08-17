@@ -17,7 +17,7 @@
           ]
         },
         {
-          "source": "https://imdad-pharma.vercel.app/(.*)",
+          "source": "/imdad-pharma.vercel.app/(.*)",
           "headers": [
             { "key": "Access-Control-Allow-Origin", "value": "*" }
           ]
